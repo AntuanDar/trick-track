@@ -16,34 +16,23 @@ import org.springframework.boot.context.config.ConfigDataResource;
 
 public class LoginPane {
 
-    @FXML
-    private ResourceBundle resources;
+    @FXML private ResourceBundle resources;
+    @FXML private URL location;
+    @FXML private Button SignCancelButton;
+    @FXML private Button SignCancelLogin;
+    @FXML private AnchorPane rootPane;
+    @FXML private PasswordField signUpLogin;
+    @FXML private PasswordField signUpPass;
 
-    @FXML
-    private URL location;
 
-    @FXML
-    private Button SignCancelButton;
-
-    @FXML
-    private Button SignCancelLogin;
-
-    @FXML
-    private AnchorPane rootPane;
-
-    @FXML
-    private PasswordField signUpLogin;
-
-    @FXML
-    private PasswordField signUpPass;
-
+    // cancel(ActionEvent event) и login(ActionEvent event) лучше убери, какая-то фигня, видимо билдер нагенерил
     @FXML
     void cancel(ActionEvent event) {
         SignCancelLogin.setOnAction(event1 ->  {
             System.out.println("Вы нажали cancel");
         });
 
-        }
+    }
 
 
     @FXML
@@ -67,12 +56,14 @@ public class LoginPane {
             Loader.setLocation(getClass().getResource("resources/ru.spb.taranenkoant.trick.track.client.MainPane/MainPane.fxml"));
 
             try {
+                //у тебя Loader написан с большой буквы, поэтому здесь идея подсвечивает как ошибку
                 loader.load();
             }  catch (IOException e) {
                 e.printStackTrace();
             }
             Parent root = loader.getRoot();
             Stage stage = new Stage();
+            //Scene надо просто импорт сделать нажми alt + enter на слове
             stage.setScene(new Scene(root));
             stage.showAndWait();
         }) ;
