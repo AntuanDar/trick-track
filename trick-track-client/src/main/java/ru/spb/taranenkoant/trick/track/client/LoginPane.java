@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
@@ -56,7 +57,8 @@ public class LoginPane {
             Loader.setLocation(getClass().getResource("resources/ru.spb.taranenkoant.trick.track.client.MainPane/MainPane.fxml"));
 
             try {
-                //у тебя Loader написан с большой буквы, поэтому здесь идея подсвечивает как ошибку
+                //у тебя Loader  написан с большой буквы, поэтому здесь идея подсвечивает как ошибку
+                //loader сделал с маленькой буквой
                 loader.load();
             }  catch (IOException e) {
                 e.printStackTrace();
@@ -64,6 +66,7 @@ public class LoginPane {
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             //Scene надо просто импорт сделать нажми alt + enter на слове
+            // сцену импортировал
             stage.setScene(new Scene(root));
             stage.showAndWait();
         }) ;
