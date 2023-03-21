@@ -12,7 +12,7 @@
         <module>trick-track-client</module>
         <module>trick-track-server</module>
         <module>trick-track-terminology</module>
-        <module>trick-track-unstaller</module>
+        <module>trick-track-installer</module>
     </modules>
 
     <properties>
