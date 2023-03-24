@@ -35,7 +35,13 @@ public class Client extends FxApplication {
     @Override
     public void start(Stage primaryStage) {
         super.start(primaryStage);
-        showModuleContainer();
+        LoginStage loginStage = new LoginStage();
+        loginStage.setOnOk(() -> {
+            if (loginStage.getLoginStatus() != LoginStatus.SUCCESS)
+                System.exit(0);
+            showModuleContainer();
+        });
+        loginStage.showAndWait();
     }
 
     private void showModuleContainer() {

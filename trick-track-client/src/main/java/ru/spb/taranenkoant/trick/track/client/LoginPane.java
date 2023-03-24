@@ -11,17 +11,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.springframework.boot.context.config.ConfigDataLoader;
 import org.springframework.boot.context.config.ConfigDataResource;
+import ru.spb.taranenkoant.trick.track.client.fx.IFxmlPane;
 
-public class LoginPane {
+public class LoginPane implements IFxmlPane {
 
+    //убрать,это что-то левое
     @FXML private ResourceBundle resources;
+    //убрать,это что-то левое
     @FXML private URL location;
     @FXML private Button SignCancelButton;
     @FXML private Button SignCancelLogin;
     @FXML private AnchorPane rootPane;
+    //логин должен быть простым текстфилдом, а не парольным
     @FXML private PasswordField signUpLogin;
     @FXML private PasswordField signUpPass;
 
@@ -53,11 +58,11 @@ public class LoginPane {
              * После нажатия кнопки Login открыть окно MainPane
              */
 
-            FXMLLoader Loader = new FXMLLoader();
-            Loader.setLocation(getClass().getResource("resources/ru.spb.taranenkoant.trick.track.client.MainPane/MainPane.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("resources/ru.spb.taranenkoant.trick.track.client.MainPane/MainPane.fxml"));
 
             try {
-                //у тебя Loader  написан с большой буквы, поэтому здесь идея подсвечивает как ошибку
+                //у тебя loader  написан с большой буквы, поэтому здесь идея подсвечивает как ошибку
                 //loader сделал с маленькой буквой
                 loader.load();
             }  catch (IOException e) {
@@ -74,4 +79,13 @@ public class LoginPane {
     }
 
 
+    @Override
+    public AnchorPane getRootPane() {
+        return rootPane;
+    }
+
+    //метод будет возвращать статус
+    public LoginStatus getLoginStatus() {
+        return null;
+    }
 }
