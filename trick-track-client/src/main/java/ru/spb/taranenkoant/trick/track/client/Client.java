@@ -35,12 +35,32 @@ public class Client extends FxApplication {
     @Override
     public void start(Stage primaryStage) {
         super.start(primaryStage);
-        showModuleContainer();
+        LoginStage loginStage = new LoginStage();
+        loginStage.setOnOk(() -> {
+            if (loginStage.getLoginStatus() != LoginStatus.SUCCESS)
+                System.exit(0);
+            showModuleContainer();
+        });
+        loginStage.showAndWait();
     }
 
     private void showModuleContainer() {
         MainPane mainPane = new MainPane();
         initializeStage(MainPane.class, mainPane);
+        // вот я поменял файл, он станет сини
+        // гит говорит ты не авторизован
+        /**
+         * git config --global user.email "you@example.com"
+         *   git config --global user.name "Your Name"
+         *
+         *   ыполни в терминале две эти команды, в первой твоя почта, во второй лоигин
+         *   Осталось самое простое- вспомнить логин)))
+         *   дай мне минутку я гитхаб счас зайду
+         *   ура теперь я авторизован
+         *
+         *
+         * */
+
         primaryStage.show();
     }
 
