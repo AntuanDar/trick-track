@@ -41,5 +41,9 @@ public class LoginStage extends Stage {
     }
 
     public void setOnOk(Runnable onOk) {
+        loginPane.setOnOk(() -> {
+            close();
+            onOk.run();
+        });
     }
 }
