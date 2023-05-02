@@ -13,6 +13,7 @@
         <module>trick-track-server</module>
         <module>trick-track-terminology</module>
         <module>trick-track-installer</module>
+        <module>trick-track-common</module>
     </modules>
 
     <properties>
