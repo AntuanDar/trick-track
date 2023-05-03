@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * Created by Anton on 01.04.2023
  * description:
  */
-@Component
+//@Component
 public class DataSourceConfiguration extends AbstractConfiguration<DataSourceConfigurationDTO> {
 
     private static final String pgDriver = "org.postgresql.Driver";

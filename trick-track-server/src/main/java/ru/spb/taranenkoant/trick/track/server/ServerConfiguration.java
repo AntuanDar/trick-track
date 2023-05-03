@@ -20,19 +20,19 @@ import javax.sql.DataSource;
 @Configuration
 public class ServerConfiguration implements WebMvcConfigurer {
 
-    @Autowired
-    private DataSourceConfiguration dataSourceConfiguration;
-
-    @Bean
-    public DataSource dataSource() {
-        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-        DataSourceConfigurationDTO config = dataSourceConfiguration.getConfig();
-        dataSourceBuilder.url(config.getUrl());
-        dataSourceBuilder.username(config.getUsername());
-        dataSourceBuilder.password(config.getPassword());
-        dataSourceBuilder.driverClassName(config.getDriverClassName());
-        return dataSourceBuilder.build();
-    }
+//    @Autowired
+//    private DataSourceConfiguration dataSourceConfiguration;
+//
+//    @Bean
+//    public DataSource dataSource() {
+//        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
+//        DataSourceConfigurationDTO config = dataSourceConfiguration.getConfig();
+//        dataSourceBuilder.url(config.getUrl());
+//        dataSourceBuilder.username(config.getUsername());
+//        dataSourceBuilder.password(config.getPassword());
+//        dataSourceBuilder.driverClassName(config.getDriverClassName());
+//        return dataSourceBuilder.build();
+//    }
 
     @Bean
     public RestTemplate restTemplate() {

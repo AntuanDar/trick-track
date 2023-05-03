@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * Created by Anton on 01.04.2023
  * description:
  */
-@Component
+//@Component
 public class TrickTrackServerConfiguration extends AbstractConfiguration<TrickTrackServerConfigurationDTO> {
 
     @Value("${" + MODULE_CONFIG_LOCATION_PROPERTY + "}")
